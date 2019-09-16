@@ -1,0 +1,111 @@
+<!Doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a one stop shop for voting and following your leader">
+    <meta name="Keywords" content=" Vote, Politico, results">
+    <meta name="author" content="kabaki.kiarie@gmail.com">
+    <meta name="viewport" content="Width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/politico.css">
+     <link rel="stylesheet" type="text/css" href="css/newparty.css">
+     <link rel="icon" href="" type="image/x-icon">
+    <title>Politico : Register Politician</title>
+</head>
+
+<body>
+    <div class="header">
+        <a class="logo">Politico</a>
+        <div class="header-right">
+            <a  href="index.html">About</a>
+            <a class="active" href="admin.html">Admin</a>
+            <a href="index.html">Sign out</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="create-card">
+            <h2>Register Politician</h2>
+            <form method="post" action="index.html">
+            <label for="Name">Full Name :</label>
+            <input type="Name" name="Name" value="full name" class="party-name" />
+            <label for="Name">Vying Office :</label>
+            <input type="Name" name="Name" value="office you vying for" class="party-name" />
+            <label for="Name">Party Name :</label>
+            <input type="Name" name="Name" value="party name" class="party-name" />
+            <div class="create"><a id="create"href="#">Register</a></div> 
+            </form> 
+        </div>
+        <div class="party-table">
+         <table class="parties-table">
+            <tr>
+                <th>Politician Name</th>
+                <th>Vying Office</th>
+                <th>Party</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                    <td>John Doe</td>
+                    <td>Presidency</td>
+                    <td>Labor Party</td>
+                    <td>
+                    <form>
+                       <input type="checkbox" name="action" value="action">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mary Doe</td>
+                    <td>Ward rep</td>
+                    <td>Republican</td>
+                    <td>
+                    <form>
+                       <input type="checkbox" name="action" value="action">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Black Panther</td>
+                    <td>Senate</td>
+                    <td>Jubilee</td>
+                    <td>
+                    <form>
+                       <input type="checkbox" name="action" value="action">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Arya Stark</td>
+                    <td>Gubernatorial</td>
+                    <td>Nasa</td>
+                    <td>
+                    <form>
+                       <input type="checkbox" name="action" value="action">
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>John Snow</td>
+                    <td>Parliamentary</td>
+                    <td>Democrat</td>
+                    <td>
+                    <form>
+                       <input type="checkbox" name="action" value="action">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <table class="links-table">
+                <tr>
+                <th  class="edit"><a  href="#">Edit Entry&nbsp;&nbsp;&nbsp;</a></th>
+                <th  class="delete" ><a  href="#">De-register</a></th>            
+            </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &#169; Politico 2019</p>
+    </div>
+</body>
+
+</html>
