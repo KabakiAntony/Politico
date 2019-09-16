@@ -53,13 +53,7 @@
    ```
       flask run or python run.py 
    ```
-
-   But note if you choose to use "flask run" you don't need to have a run.py module but then you have
-   to set the environment variables.
-   If you have the run.py and you choose to use it as the entry point of the app 
-   then follow this steps 
-
-   NOTE "flask run" defaults to production where the debug mode is off 
+ NOTE "flask run" defaults to production where the debug mode is off 
         and that denies one the chance of seeing the errors that arise
         but the below settings will help override that 
    ```
@@ -68,12 +62,7 @@
       set FLASK_DEBUG=1
       SET FLASK_ENV=development
        
-   ```
-   If you choose to use "python run.py" or whatever other name you may choose to call the apps entry 
-   point or main then make sure the module is there and there on in you can configure the app how you
-   want, it's worth nothing that app.run() is not advisable to be on the production app.
-
-   
+   ``` 
 
 <details>
 <summary>V1 Politico Endpoints</summary>
