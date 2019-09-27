@@ -1,10 +1,19 @@
+[![Build Status](https://travis-ci.org/KabakiAntony/Politico.svg?branch=develop)](https://travis-ci.org/KabakiAntony/Politico)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/maintainability)](https://codeclimate.com/github/KabakiAntony/Politico/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/test_coverage)](https://codeclimate.com/github/KabakiAntony/Politico/test_coverage)
+
+[![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/Politico/badge.svg?branch=develop)](https://coveralls.io/github/KabakiAntony/Politico?branch=develop)
+
+
 # Politico
  This is a web app that helps the electorate vote and monitor elections.
 
  Follow the below steps and you will be able to run the app without any challenges the assumption
  is you already have python installed any version from 3.* and above should run without any challenges
  
- Find the backend for this app hosted on gh-pages on the following link https://kabakiantony.github.io/Politico/UI/
+ Find the frontend for this app hosted on gh-pages on the following link https://kabakiantony.github.io/Politico/UI/
 
 ## Setup and installation
 
