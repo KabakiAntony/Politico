@@ -71,6 +71,6 @@ def update_office(id):
         office_data = request.get_json()  
         name = office_data["name"]
     except:
-        return override_make_response("Data","Key should be 'name'!",400)
+        return override_make_response("Error","Key should be 'name'!",400)
     office = Office.modify_office(id,name)
     return check_return(office,"Office")
