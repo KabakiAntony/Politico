@@ -18,7 +18,7 @@ def create_office():
         office_type = office_data["office_type"]
     except:
         return override_make_response(
-            "Data","Keys should be 'name' and 'office_type' ! ",400)
+            "Error","Keys should be 'name' and 'office_type' ! ",400)
     new_office = {
         "name":name,
         "office_type":office_type,
@@ -26,3 +26,13 @@ def create_office():
     }
     Office.new_office(new_office)
     return override_make_response("Data",new_office,201)
+
+
+@version_one.route('/offices',methods=['GET'])
+def all_offices():
+    """
+    This will return the offices that exist at this point or 
+    a no office was found message if none exists.
+    """
+    existing_offices = Office.get_offices()
+    return check_return(existing_offices,"Office")

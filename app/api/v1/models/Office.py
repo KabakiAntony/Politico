@@ -22,3 +22,9 @@ class Office:
         """
         OFFICE.append(self)
         return OFFICE
+    
+
+    def get_offices():
+        """This will return all the offices in the given list 
+        Or an empty list if no offices exist"""
+        return OFFICE
