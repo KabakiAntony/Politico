@@ -46,3 +46,12 @@ def get_office(id):
     """
     office = Office.get_office(id)
     return check_return(office,"Office")
+
+
+@version_one.route('/offices/<int:id>',methods=['DELETE'])
+def remove_office(id):
+    """This deletes an office if found  and returns a success message
+    Or a faliure message if no office has been found and On successive hits 
+    to this endpoint after the first successive hit """
+    is_deleted = Office.delete_office(id)
+    return check_return(is_deleted,"Office")
