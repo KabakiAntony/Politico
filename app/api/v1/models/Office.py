@@ -57,3 +57,16 @@ class Office:
                     # normally the_office would be a list or an empty list
                     the_office = "Office deleted successfully."
         return the_office
+    
+    
+    def modify_office(id,name):
+        """This changes the name of the office and the type of office 
+        given a new name and the type of office
+        """
+        the_office = Office.get_office(id)
+        if the_office:
+            for office in OFFICE:
+                if office["id"]==id:
+                    office["name"]=name
+                    the_office = Office.get_office(id)
+        return the_office
