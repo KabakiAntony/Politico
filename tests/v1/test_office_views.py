@@ -57,7 +57,7 @@ class TestOfficeViews(unittest.TestCase):
 
     def test_getting_all_offices(self):
         """Test getting all offices """
-        self.post()
+        #self.post()
         response = self.client.get('api/v1/offices')
         self.assertEqual(response.status_code,200)
         result = json.loads(response.data.decode('utf-8'))
