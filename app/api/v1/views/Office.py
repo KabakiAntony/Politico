@@ -6,6 +6,8 @@ from app.api.v1 import version_one
 from app.api.v1.models.Office import OFFICE,Office
 from app.api.utils import override_make_response,check_return
 
+specific_office = '/offices/<int:id>'
+
 
 @version_one.route('/offices',methods=['POST'])
 def create_office():
@@ -37,7 +39,7 @@ def all_offices():
     existing_offices = Office.get_offices()
     return check_return(existing_offices,"Office")
 
-@version_one.route('/offices/<int:id>',methods=['GET'])
+@version_one.route(specific_office,methods=['GET'])
 def get_office(id):
     """
     This gets a specific office whose id matches with the one 
@@ -48,10 +50,27 @@ def get_office(id):
     return check_return(office,"Office")
 
 
-@version_one.route('/offices/<int:id>',methods=['DELETE'])
+@version_one.route(specific_office,methods=['DELETE'])
 def remove_office(id):
     """This deletes an office if found  and returns a success message
     Or a faliure message if no office has been found and On successive hits 
     to this endpoint after the first successive hit """
     is_deleted = Office.delete_office(id)
     return check_return(is_deleted,"Office")
+
+
+@version_one.route('/offices/<int:id>/name',methods=['PATCH'])
+def update_office(id):
+    """
+    This updates the name of the office whose id has been supplied by the 
+    user and returns the office with the new name in place it will always 
+    return the same data on successful update and an office not found 
+    message if the id supplied does not match with any of the existing offices.
+    """
+    try:
+        office_data = request.get_json()  
+        name = office_data["name"]
+    except:
+        return override_make_response("Error","Key should be 'name'!",400)
+    office = Office.modify_office(id,name)
+    return check_return(office,"Office")

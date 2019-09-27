@@ -84,3 +84,24 @@ class TestOfficeViews(unittest.TestCase):
         # hence no content type header
         response = self.client.delete('api/v1/offices/{}'.format(0))
         self.assertEqual(response.status_code,200)
+    
+    
+    def test_deleting_a_non_existent_office(self):
+        """ Test deleting a non-existent office """
+        response = self.client.delete('api/v1/offices/{}'.format(1000))
+        self.assertEqual(response.status_code,404)
+
+    
+
+    def test_updating_office(self):
+        """Test updating an office """
+        response = self.client.patch('api/v1/offices/{}/name'.format(0),
+            data=json.dumps(self.updated_office),content_type='application/json')
+        self.assertEqual(response.status_code,200)
+
+
+    def test_updating_a_non_existent_toffice(self):
+        """Test updating a non-existent office """
+        response = self.client.patch('api/v1/offices/{}/name'.format(100),
+            data=json.dumps(self.updated_office),content_type='application/json')
+        self.assertEqual(response.status_code,404)
