@@ -36,3 +36,13 @@ def all_offices():
     """
     existing_offices = Office.get_offices()
     return check_return(existing_offices,"Office")
+
+@version_one.route('/offices/<int:id>',methods=['GET'])
+def get_office(id):
+    """
+    This gets a specific office whose id matches with the one 
+    supplied by the user or a not found message if no office matches 
+    with the id supplied by the user
+    """
+    office = Office.get_office(id)
+    return check_return(office,"Office")

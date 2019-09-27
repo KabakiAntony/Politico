@@ -20,7 +20,7 @@ def check_return(returned,model):
     if not returned:
         message = f"No {model} was found!"
         status = 404
-        response = override_make_response("Data",message,status)
+        response = override_make_response("Error",message,status)
     else:
         message = returned
         status = 200
