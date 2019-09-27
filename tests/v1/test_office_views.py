@@ -57,7 +57,7 @@ class TestOfficeViews(unittest.TestCase):
 
     def test_getting_all_offices(self):
         """Test getting all offices """
-        #self.post()
+        self.post()
         response = self.client.get('api/v1/offices')
         self.assertEqual(response.status_code,200)
         result = json.loads(response.data.decode('utf-8'))
@@ -71,3 +71,16 @@ class TestOfficeViews(unittest.TestCase):
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], [self.specific_office])
         self.assertEqual(result["Status"],200)
+
+    def test_getting_a_non_existent_office(self):
+        """Test getting a non-existent office"""
+        response = self.client.get('api/v1/offices/{}'.format(20))
+        self.assertEqual(response.status_code,404)
+
+
+    def test_deleting_office(self):
+        """ Test deletion of an office """
+        # delete may or may not have a body so in this case it does not 
+        # hence no content type header
+        response = self.client.delete('api/v1/offices/{}'.format(0))
+        self.assertEqual(response.status_code,200)
