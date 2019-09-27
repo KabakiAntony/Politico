@@ -47,11 +47,21 @@ def get_office(id):
     office = Office.get_office(id)
     return check_return(office,"Office")
 
-
-@version_one.route('/offices/<int:id>',methods=['DELETE'])
-def remove_office(id):
-    """This deletes an office if found  and returns a success message
-    Or a faliure message if no office has been found and On successive hits 
-    to this endpoint after the first successive hit """
-    is_deleted = Office.delete_office(id)
-    return check_return(is_deleted,"Office")
+def delete_office(id):
+        """
+        This method deletes an office whose id matches with the id that
+         the user has supplied.
+        On success it returns a success message that the office has been
+         deleted 
+        Or not found on successive calls to the endpoint 
+        Or when the office has not been found from the word go
+        """
+        the_office = Offices.get_office(id)
+        if the_office:
+            for office in offices:
+                if office["id"]==id:
+                    offices.remove(office)
+                    # the dynamic nature of python allows me to return a string at this point
+                    # normally the_office would be a list or an empty list
+                    the_office = "Office deleted successfully."
+        return the_office
