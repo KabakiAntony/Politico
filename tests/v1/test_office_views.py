@@ -63,3 +63,11 @@ class TestOfficeViews(unittest.TestCase):
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], [self.specific_office])
         self.assertEqual(result["Status"],200)
+
+    def test_getting_specific_office(self):
+        """Test getting a specific office """
+        response = self.client.get('api/v1/offices/{}'.format(0))
+        self.assertEqual(response.status_code,200)
+        result = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(result["Data"], [self.specific_office])
+        self.assertEqual(result["Status"],200)
