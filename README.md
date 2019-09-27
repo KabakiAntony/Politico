@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/KabakiAntony/Politico.svg?branch=develop)](https://travis-ci.org/KabakiAntony/Politico) [![Maintainability](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/maintainability)](https://codeclimate.com/github/KabakiAntony/Politico/maintainability) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/Politico/badge.svg?branch=develop)](https://coveralls.io/github/KabakiAntony/Politico?branch=develop)
+[![Build Status](https://travis-ci.org/KabakiAntony/Politico.svg?branch=develop)](https://travis-ci.org/KabakiAntony/Politico) [![Maintainability](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/maintainability)](https://codeclimate.com/github/KabakiAntony/Politico/maintainability) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/Politico/badge.svg)](https://coveralls.io/github/KabakiAntony/Politico)
 
 # Politico
  This is a web app that helps the electorate vote and monitor elections.
