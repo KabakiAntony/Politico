@@ -28,3 +28,13 @@ class Office:
         """This will return all the offices in the given list 
         Or an empty list if no offices exist"""
         return OFFICE
+
+    def get_office(id):
+        """This will return a specific office object given the id
+        supplied by the user Or an empty list if no office was found.
+        This method will also be re-used by the methods that need 
+        to know if an office exists before making any
+        changes to it that is modify and delete
+        """ 
+        the_office = [office for office in OFFICE if office['id']==id]
+        return the_office
