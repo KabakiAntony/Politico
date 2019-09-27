@@ -48,3 +48,18 @@ class TestOfficeViews(unittest.TestCase):
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], self.specific_office)
         self.assertEqual(result["Status"], 201)
+
+    # the reason am posting in test_getting_all_offices is
+    # because tests are run alphabetically in
+    # the test module hence delete runs before get
+    # so I have to create my data again before getting 
+    # it since it has already being deleted
+
+    def test_getting_all_offices(self):
+        """Test getting all offices """
+        self.post()
+        response = self.client.get('api/v1/offices')
+        self.assertEqual(response.status_code,200)
+        result = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(result["Data"], [self.specific_office])
+        self.assertEqual(result["Status"],200)
