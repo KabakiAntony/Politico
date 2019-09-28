@@ -22,3 +22,5 @@ class Party:
         """
         PARTY.append(self)
         return PARTY
+
+    
