@@ -1,7 +1,7 @@
 import json 
 import unittest
 from app import create_app
-from app.api.v1.models import Party,PARTY
+from app.api.v1.models.Party import Party,PARTY
 
 
 class TestPartyViews(unittest.TestCase):
@@ -38,4 +38,13 @@ class TestPartyViews(unittest.TestCase):
         response = self.client.post(
             'api/v1/parties',data=json.dumps(self.test_party), content_type='application/json')
         return response
+    
+
+    def test_creating_party(self):
+        """ Test the creation of a party """
+        response = self.create()
+        self.assertEqual(response.status_code,201)
+        result = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(result["Data"], self.specific_party)
+        self.assertEqual(result["Status"], 201)
         
