@@ -47,4 +47,13 @@ class TestPartyViews(unittest.TestCase):
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], self.specific_party)
         self.assertEqual(result["Status"], 201)
+    
+    def test_getting_all_parties(self):
+        """Test getting all parties """
+        #self.create()
+        response = self.client.get('api/v1/parties')
+        self.assertEqual(response.status_code,200)
+        result = json.loads(response.data.decode('utf-8'))
+        self.assertEqual(result["Data"], [self.specific_party])
+        self.assertEqual(result["Status"], 200)
         

@@ -22,3 +22,10 @@ class Party:
         """
         PARTY.append(self)
         return PARTY
+    
+    def get_parties():
+        """This will return all the parties in the given list 
+        Or an empty list if no parties exist"""      
+        return PARTY
+
+    

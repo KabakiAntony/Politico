@@ -27,3 +27,14 @@ def create_party():
     }
     Party.new_party(new_party)
     return override_make_response("Data",new_party,201)
+
+
+@version_one.route('/parties', methods=['GET'])
+def all_parties():
+    """
+    This will return the parties that exist at this point or 
+    a no party was found message if none exists.
+    """
+    # existing_parties is a list of the parties found/not
+    existing_parties = Party.get_parties()
+    return check_return(existing_parties,"Party")
