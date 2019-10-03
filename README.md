@@ -8,6 +8,8 @@
  
  Find the frontend for this app hosted on gh-pages on the following link https://kabakiantony.github.io/Politico/UI/
 
+ The backend is hosted on heroku at https://tonyk-politico.herokuapp.com/
+
 ## Setup and installation
 
 1. Set up virtualenv
@@ -80,6 +82,7 @@
 | `PATCH`  | `/api/v1/parties/<int:party_id>/name` | modify a party by name                |
 | `PATCH`  | `/api/v1/offices/<int:office_id>/name`| modify an office by name              |
 | `DELETE` | `/api/v1/parties/<int:party_id>`      | Delete a party by Id                  |
+| `DELETE` | `/api/v1/offices/<int:office_id>`     | Delete a office by Id                 |
 
 </details>
 
