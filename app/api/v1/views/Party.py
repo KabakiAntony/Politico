@@ -48,3 +48,14 @@ def get_party(id):
     """
     party = Party.get_party(id)
     return check_return(party,"Party")
+
+
+@version_one.route('parties/<int:id>', methods=['DELETE'])
+def remove_party(id):
+    """
+    This deletes a party if found  and returns a success message
+    Or a faliure message if no party has been found and On successive hits 
+    to this endpoint after the first successive hit.
+    """
+    is_deleted = Party.delete_party(id)
+    return check_return(is_deleted,"Party")
