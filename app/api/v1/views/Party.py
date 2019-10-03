@@ -38,3 +38,13 @@ def all_parties():
     # existing_parties is a list of the parties found/not
     existing_parties = Party.get_parties()
     return check_return(existing_parties,"Party")
+
+@version_one.route('parties/<int:id>', methods=['GET'])
+def get_party(id):
+    """
+    This gets a specific party whose id matches with the one 
+    supplied by the user or a not found message if no party matches 
+    with the id supplied by the user
+    """
+    party = Party.get_party(id)
+    return check_return(party,"Party")
