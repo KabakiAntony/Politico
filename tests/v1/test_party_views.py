@@ -79,4 +79,14 @@ class TestPartyViews(unittest.TestCase):
             'api/v1/parties/{}'.format(0),content_type='application/json')
         self.assertEqual(response.status_code,200)
 
-        
+    def test_deleting_a_non_existent_party(self):
+        """Test deleting a non existent  party"""
+        response = self.client.delete(
+            'api/v1/parties/{}'.format(20),content_type='application/json')
+        self.assertEqual(response.status_code,404)
+    
+    def test_updating_a_party(self):
+        """Test updating a party"""
+        response = self.client.patch('api/v1/parties/{}/name'.format(0),
+            data=json.dumps(self.updated_party),content_type='application/json')
+        self.assertEqual(response.status_code,200)
