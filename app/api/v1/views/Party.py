@@ -59,3 +59,20 @@ def remove_party(id):
     """
     is_deleted = Party.delete_party(id)
     return check_return(is_deleted,"Party")
+
+@version_one.route('parties/<int:id>/name',methods=['PATCH'])
+def update_party(id):
+    """
+    This updates the name of the party whose id has been supplied by the 
+    user and returns the party with the new name in place it will always 
+    return the same data on successful update and a party not found 
+    message if the id supplied does not match with any of the existing parties.
+    """
+    try:
+        party_data = request.get_json()  
+        name = party_data["name"]
+        party = Party.update_party(id,name)
+    except:
+        return override_make_response("Error","Key should be name !",400)
+    return check_return(party,"Party")
+

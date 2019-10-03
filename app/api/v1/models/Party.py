@@ -59,6 +59,22 @@ class Party:
                     # normally the_party would be a list or an empty list
                     the_party = "Party deleted successfully."
         return the_party
+    
+
+    def update_party(id,name):
+        """
+        This changes the name of the party and the type of party 
+        given a new name and the type of party but we will just change 
+        the name to prove concept.
+        """
+        the_party = Party.get_party(id)
+        if the_party:
+            for party in PARTY:
+                if party["id"]==id:
+                    party["name"]=name
+                    the_party = Party.get_party(id)
+        return the_party
+
         
 
     
