@@ -50,7 +50,7 @@ class TestPartyViews(unittest.TestCase):
     
     def test_getting_all_parties(self):
         """Test getting all parties """
-        #self.create()
+        self.create()
         response = self.client.get('api/v1/parties')
         self.assertEqual(response.status_code,200)
         result = json.loads(response.data.decode('utf-8'))

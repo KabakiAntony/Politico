@@ -50,11 +50,11 @@ class Party:
         Or not found on successive calls to the endpoint 
         Or when the party has not been found from the word go
         """
-        the_party = Parties.get_party(id)
+        the_party = Party.get_party(id)
         if the_party:
-            for party in parties:
+            for party in PARTY:
                 if party["id"]==id:
-                    parties.remove(party)
+                    PARTY.remove(party)
                     # the dynamic nature of python allows me to return a string at this point
                     # normally the_party would be a list or an empty list
                     the_party = "Party deleted successfully."
