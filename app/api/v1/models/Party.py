@@ -39,5 +39,26 @@ class Party:
         # this is a list comprehension to make code readable
         the_party = [party for party in PARTY if party["id"] == id]
         return the_party
+    
+
+    def delete_party(id):
+        """
+        This method deletes a party whose id matches with the id that
+         the user has supplied.
+        On success it returns a success message that the party has been
+         deleted 
+        Or not found on successive calls to the endpoint 
+        Or when the party has not been found from the word go
+        """
+        the_party = Parties.get_party(id)
+        if the_party:
+            for party in parties:
+                if party["id"]==id:
+                    parties.remove(party)
+                    # the dynamic nature of python allows me to return a string at this point
+                    # normally the_party would be a list or an empty list
+                    the_party = "Party deleted successfully."
+        return the_party
+        
 
     
