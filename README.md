@@ -13,9 +13,9 @@
 
  [Find the UI here](https://kabakiantony.github.io/Politico/UI/)
 
- [Find the app on heroku](https://v1politico.herokuapp.com/)
+ [Find the app on heroku](https://kapolitico.herokuapp.com/)
 
- [Find the API Documentation here](https://v1politico.docs.apiary.io)
+ [Find the API Documentation here](https://kapolitico.docs.apiary.io)
 
 ## Setup and installation
 
