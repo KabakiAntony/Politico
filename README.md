@@ -98,8 +98,8 @@
 
 <details open>
 
-Incase of anything a bug or anything else use any on the below channels to reach me
+Incase of a bug or anything else use any on the below channels to reach me
 
-[Find me on twitter](https://twitter.com/kabakikiarie)
+[Find me on twitter](https://twitter.com/kabakikiarie) OR  Drop me an email at kabaki.antony@gmail.com
 
-[Email me at](kabaki.antony@gmail.com)
+
