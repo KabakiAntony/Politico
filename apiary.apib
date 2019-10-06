@@ -13,30 +13,6 @@ monitor electioneering process.
 
 ## Offices Collection [/api/v1/offices]
 
-### List All Offices [GET]
-
-A user of the system should be able to get all the offices that exist.
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "Data": [
-                    {
-                        "id": 0,
-                        "name": "Presidency",
-                        "office_type": "National"
-                    },
-                    {
-                        "id": 1,
-                        "name": "Presidency",
-                        "office_type": "National"
-                    }
-                ],
-                "Status": 200
-                }
-        ]
-
 ### Create a New Office [POST]
 
 Admin user should be able to create a new office if it does not exist.
@@ -66,3 +42,27 @@ Admin user should be able to create a new office if it does not exist.
                 "Status": 201
                 }
             }
+
+### List All Offices [GET]
+
+A user of the system should be able to get all the offices that exist.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "Data": [
+                    {
+                        "id": 0,
+                        "name": "Presidency",
+                        "office_type": "National"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Presidency",
+                        "office_type": "National"
+                    }
+                ],
+                "Status": 200
+                }
+        ]
