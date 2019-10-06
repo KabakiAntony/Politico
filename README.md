@@ -97,6 +97,6 @@
 
 Incase of a bug or anything else use any on the below channels to reach me
 
-[Find me on twitter](https://twitter.com/kabakikiarie) OR  Drop me an email at kabaki.antony@gmail.com
+[Find me on twitter](https://twitter.com/kabakikiarie) OR  drop me an email at kabaki.antony@gmail.com
 
 
