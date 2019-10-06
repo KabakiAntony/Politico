@@ -20,14 +20,17 @@ def create_office():
         office_type = office_data["office_type"]
     except:
         return override_make_response(
-            "Error","Keys should be 'name' and 'office_type' ! ",400)
+            "Error","Keys should be 'name' and 'office_type' ! ",
+            400)
     new_office = {
         "name":name,
         "office_type":office_type,
         "id":len(OFFICE)
     }
     Office.new_office(new_office)
-    return override_make_response("Data",new_office,201)
+    return override_make_response(
+        "Data",new_office,
+        201)
 
 
 @version_one.route('/offices',methods=['GET'])
@@ -71,6 +74,8 @@ def update_office(id):
         office_data = request.get_json()  
         name = office_data["name"]
     except:
-        return override_make_response("Error","Key should be 'name'!",400)
+        return override_make_response(
+            "Error","Key should be 'name'!",
+            400)
     office = Office.modify_office(id,name)
     return check_return(office,"Office")
