@@ -9,7 +9,9 @@ def override_make_response(key,message,status):
         "Status":status
         }
     raw_dict[key] = message
-    return make_response(jsonify(raw_dict), status)
+    return make_response(
+        jsonify(raw_dict),
+        status)
 
 
 def check_return(returned,model):
