@@ -1,80 +1,68 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://tonyk-politico.herokuapp.com/
 
-# tonykPolitico
+# Politico v1
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+A web app that helps one to vote for their candidate of choice and to 
+monitor electioneering process.
 
-## Questions Collection [/questions]
+### The following are the useful links for this project.
 
-### List All Questions [GET]
+##### https://kabakiantony.github.io/Politico/UI/
+##### https://github.com/KabakiAntony/Politico
+
+## Offices Collection [/api/v1/offices]
+
+### List All Offices [GET]
+
+A user of the system should be able to get all the offices that exist.
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
+                "Data": [
                     {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
+                        "id": 0,
+                        "name": "Presidency",
+                        "office_type": "National"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Presidency",
+                        "office_type": "National"
                     }
-                ]
-            }
+                ],
+                "Status": 200
+                }
         ]
 
-### Create a New Question [POST]
+### Create a New Office [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+Admin user should be able to create a new office if it does not exist.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+        "name":"Presidency",
+        "office_type":"National"
         }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/2
+            Location: /api/v1/offices/0
 
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                {
+                "Data": {
+                "id": 0,
+                "name": "Presidency",
+                "office_type": "National"
+                },
+                "Status": 201
+                }
             }
