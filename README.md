@@ -3,11 +3,11 @@
 # Politico
  This is a web app that helps the electorate vote and monitor elections.
 
- Follow the below steps and you will be able to run the app without any challenges the assumption
- is you already have python installed any version from 3.* and above.
+ Follow the below steps and you will be able to run the app without any challenges 
+ the assumption is you already have python installed, any version from 3.* above.
 
- This application has two versions of the backend v1 and v2 where v1 is not persistent it uses a 
- list data structure to store the information and hence the info is overwritten everytime the app
+ This application has two versions of the backend v1 and v2. Where v1 is not persistent
+ it uses a list data structure to store data and hence the data is overwritten everytime the app
  is reloaded and v2 uses the postgres database to store information hence what we will connect with 
  the UI.
 
@@ -98,6 +98,8 @@
 
 <details open>
 
+Incase of anything a bug or anything else use any on the below channels to reach me
 
 [Find me on twitter](https://twitter.com/kabakikiarie)
+
 [Email me at](kabaki.antony@gmail.com)
