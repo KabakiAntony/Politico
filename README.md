@@ -6,9 +6,11 @@
  Follow the below steps and you will be able to run the app without any challenges the assumption
  is you already have python installed any version from 3.* and above should run without any challenges
  
- Find the frontend for this app hosted on gh-pages on the following link https://kabakiantony.github.io/Politico/UI/
+ [Find the UI here](https://kabakiantony.github.io/Politico/UI/)
 
- The backend is hosted on heroku at https://tonyk-politico.herokuapp.com/
+ [Find the app on heroku](https://v1politico.herokuapp.com/)
+
+ [Find the API Documentation here](https://v1politico.docs.apiary.io)
 
 ## Setup and installation
 
