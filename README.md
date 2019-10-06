@@ -4,8 +4,13 @@
  This is a web app that helps the electorate vote and monitor elections.
 
  Follow the below steps and you will be able to run the app without any challenges the assumption
- is you already have python installed any version from 3.* and above should run without any challenges
- 
+ is you already have python installed any version from 3.* and above.
+
+ This application has two versions of the backend v1 and v2 where v1 is not persistent it uses a 
+ list data structure to store the information and hence the info is overwritten everytime the app
+ is reloaded and v2 uses the postgres database to store information hence what we will connect with 
+ the UI.
+
  [Find the UI here](https://kabakiantony.github.io/Politico/UI/)
 
  [Find the app on heroku](https://v1politico.herokuapp.com/)
@@ -45,7 +50,7 @@
    ```
       python -m pytest --cov=app/api 
 
-      For the machines that may have a challenge running pytest as I noticed there is a bug getting pytest to 
+      For those that may have a challenge running pytest as I noticed there is a bug getting pytest to 
       run on some windows machines then run the tests with  the below command. 
 
       python -m nose2 -v 
@@ -61,7 +66,10 @@
    ```
  NOTE "flask run" defaults to production where the debug mode is off 
         and that denies one the chance of seeing the errors that arise
-        but the below settings will help override that 
+        but the below settings will help override that.
+
+        So if you choose to use flask run please set the following environment
+        variables.
    ```
       use set on windows and export on linux/mac
       set FLASK_APP=run.py
@@ -91,4 +99,5 @@
 <details open>
 
 
-Done by Kabaki Antony find me on twitter https://twitter.com/kabakikiarie
+[Find me on twitter](https://twitter.com/kabakikiarie)
+[Email me at](kabaki.antony@gmail.com)
