@@ -67,9 +67,6 @@
  NOTE "flask run" defaults to production where the debug mode is off 
         and that denies one the chance of seeing the errors that arise
         but the below settings will help override that.
-
-        So if you choose to use flask run please set the following environment
-        variables.
    ```
       use set on windows and export on linux/mac
       set FLASK_APP=run.py
