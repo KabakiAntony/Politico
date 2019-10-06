@@ -50,7 +50,7 @@ A user of the system should be able to get all the offices that exist.
 
 + Response 200 (application/json)
 
-        [
+    
             {
                 "Data": [
                     {
@@ -66,14 +66,14 @@ A user of the system should be able to get all the offices that exist.
                 ],
                 "Status": 200
                 }
-        ]
+        
 
-## Specific Office [/api/v1/offices/{office_id}]
+### Get a specific office [/api/v1/offices/{office_id}]
 
 + Parameters 
     + office_id (number)- Office ID in the form of an integer
 
-### Get specific Office [GET]
+### Getting a specific office [GET]
 
 A user of the system should be able to get a specific office by supplying the id 
 of the office
@@ -92,11 +92,46 @@ of the office
                 "Status": 200
                 }
         ]
+
+
+### Update a specific Office [/api/v1/offices/{office_id}/name]
+
++ Parameters 
+    + office_id (number)- Office ID in the form of an integer
+
+### Update an office name [PATCH]
+
+An admin should be able to update the details of any office using the id as the 
+identifier
+
++ Request (application/json)
+
+    + Body
+    
+            {
+            "name":"gubernatorial"
+            }
+
+    + Headers
+
+            x-access-token: ""
+
++ Response 200 (application/json)
+
+        
+        {
+        "Data": [{
+            "id": 0,
+            "name": "gubernatorial",
+            "office_type": "National"
+        }],
+        "Status": 200
+        }
         
         
 ## Parties Collection [/api/v1/parties]
 
-### Create a new Party [POST]
+### Create a new party [POST]
 
 Admin user should be able to create a new party if it does not exist.
 
@@ -116,7 +151,7 @@ Admin user should be able to create a new party if it does not exist.
 
     + Body
 
-            {
+            
                 {
                 "Data": {
                 "id": 0,
@@ -125,15 +160,15 @@ Admin user should be able to create a new party if it does not exist.
                 },
                 "Status": 201
                 }
-            }
+            
 
-### List all Parties [GET]
+### List all parties [GET]
 
 A user of the system should be able to get all the parties that exist.
 
 + Response 200 (application/json)
 
-        [
+        
             {
                 "Data": [
                     {
@@ -149,4 +184,3 @@ A user of the system should be able to get all the parties that exist.
                 ],
                 "Status": 200
                 }
-        ]
