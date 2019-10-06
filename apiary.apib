@@ -13,7 +13,7 @@ monitor electioneering process.
 
 ## Offices Collection [/api/v1/offices]
 
-### Create a New Office [POST]
+### Create a new Office [POST]
 
 Admin user should be able to create a new office if it does not exist.
 
@@ -43,7 +43,7 @@ Admin user should be able to create a new office if it does not exist.
                 }
             }
 
-### List All Offices [GET]
+### List all Offices [GET]
 
 A user of the system should be able to get all the offices that exist.
 
@@ -61,6 +61,89 @@ A user of the system should be able to get all the offices that exist.
                         "id": 1,
                         "name": "Presidency",
                         "office_type": "National"
+                    }
+                ],
+                "Status": 200
+                }
+        ]
+
+## Specific Office [/api/v1/offices/{office_id}]
+
++ Parameters 
+    + office_id (number)- Office ID in the form of an integer
+
+### Get specific Office [GET]
+
+A user of the system should be able to get a specific office by supplying the id 
+of the office
+
++ Response 200 (application/json)
+
+        [
+            {
+                "Data": [
+                    {
+                        "id": 0,
+                        "name": "Presidency",
+                        "office_type": "National"
+                    }
+                ],
+                "Status": 200
+                }
+        ]
+        
+        
+## Parties Collection [/api/v1/parties]
+
+### Create a new Party [POST]
+
+Admin user should be able to create a new party if it does not exist.
+
++ Request (application/json)
+
+        {
+        "name": "odm",
+        "hqAddress": "Jubilee hse",
+        "logoUrl": "http://localhost/myimages"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/v1/parties/0
+
+    + Body
+
+            {
+                {
+                "Data": {
+                "id": 0,
+                "hqAddress": "Jubilee hse",
+                "logoUrl": "http://localhost/myimages"
+                },
+                "Status": 201
+                }
+            }
+
+### List all Parties [GET]
+
+A user of the system should be able to get all the parties that exist.
+
++ Response 200 (application/json)
+
+        [
+            {
+                "Data": [
+                    {
+                        "id": 0,
+                        "hqAddress": "Jubilee hse",
+                        "logoUrl": "http://localhost/myimages"
+                    },
+                    {
+                        "id": 1,
+                        "hqAddress": "Jubilee hse",
+                        "logoUrl": "http://localhost/myimages"
                     }
                 ],
                 "Status": 200
