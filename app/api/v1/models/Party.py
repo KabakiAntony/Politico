@@ -24,17 +24,12 @@ class Party:
         return PARTY
     
     def get_parties():
-        """This will return all the parties in the given list 
-        Or an empty list if no parties exist"""      
+        """Returns all parties in the our party list"""      
         return PARTY
     
     def get_party(id):
         """
-        This will return a specific party object given the id
-        supplied by the user Or an empty list if no party was found.
-        This method will also be re-used by the methods that need 
-        to know if an party exists before making any
-        changes to it that is modify and delete
+        This will get a single party from the party list.
         """
         # this is a list comprehension to make code readable
         the_party = [party for party in PARTY if party["id"] == id]
