@@ -36,8 +36,7 @@ def create_office():
 @version_one.route('/offices',methods=['GET'])
 def all_offices():
     """
-    This returns the offices that exist at this point or 
-    a no office was found message.
+    This returns the offices or an empty list.
     """
     existing_offices = Office.get_offices()
     return check_return(existing_offices,"Office")
@@ -54,8 +53,9 @@ def get_office(id):
 
 @version_one.route(specific_office,methods=['DELETE'])
 def remove_office(id):
-    """This deletes an office if found  and returns a success message
-    Or a faliure message if no office has been found """
+    """
+    deletes an office 
+    """
     is_deleted = Office.delete_office(id)
     return check_return(is_deleted,"Office")
 
@@ -63,9 +63,7 @@ def remove_office(id):
 @version_one.route('/offices/<int:id>/name',methods=['PATCH'])
 def update_office(id):
     """
-    This updates the name of the office whose id has been supplied by the 
-    user and returns the office with the new name in place it will always 
-    return the same data on successful update.
+    updates the name of the office.
     """
     try:
         office_data = request.get_json()  

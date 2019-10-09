@@ -37,12 +37,7 @@ class Office:
     
     def delete_office(id):
         """
-        This method deletes an office whose id matches with the id that
-         the user has supplied.
-        On success it returns a success message that the office has been
-         deleted 
-        Or not found on successive calls to the endpoint 
-        Or when the office has not been found from the word go
+        This method deletes an office.
         """
         the_office = Office.get_office(id)
         if the_office:

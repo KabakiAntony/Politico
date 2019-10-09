@@ -32,8 +32,7 @@ def create_party():
 @version_one.route('/parties', methods=['GET'])
 def all_parties():
     """
-    This will return the parties that exist at this point or 
-    a no party was found message if none exists.
+    This returns the party list empty or not.
     """
     # existing_parties is a list of the parties found/not
     existing_parties = Party.get_parties()
@@ -42,9 +41,7 @@ def all_parties():
 @version_one.route('parties/<int:id>', methods=['GET'])
 def get_party(id):
     """
-    This gets a specific party whose id matches with the one 
-    supplied by the user or a not found message if no party matches 
-    with the id supplied by the user
+    Getting a party with a matching Id.
     """
     party = Party.get_party(id)
     return check_return(party,"Party")
@@ -53,9 +50,7 @@ def get_party(id):
 @version_one.route('parties/<int:id>', methods=['DELETE'])
 def remove_party(id):
     """
-    This deletes a party if found  and returns a success message
-    Or a faliure message if no party has been found and On successive hits 
-    to this endpoint after the first successive hit.
+    This deletes a party.
     """
     is_deleted = Party.delete_party(id)
     return check_return(is_deleted,"Party")
@@ -63,10 +58,7 @@ def remove_party(id):
 @version_one.route('parties/<int:id>/name',methods=['PATCH'])
 def update_party(id):
     """
-    This updates the name of the party whose id has been supplied by the 
-    user and returns the party with the new name in place it will always 
-    return the same data on successful update and a party not found 
-    message if the id supplied does not match with any of the existing parties.
+    This updates the name of the party.
     """
     try:
         party_data = request.get_json()  

@@ -38,12 +38,7 @@ class Party:
 
     def delete_party(id):
         """
-        This method deletes a party whose id matches with the id that
-         the user has supplied.
-        On success it returns a success message that the party has been
-         deleted 
-        Or not found on successive calls to the endpoint 
-        Or when the party has not been found from the word go
+        Here we remove a party from our list.
         """
         the_party = Party.get_party(id)
         if the_party:
@@ -58,9 +53,7 @@ class Party:
 
     def update_party(id,name):
         """
-        This changes the name of the party and the type of party 
-        given a new name and the type of party but we will just change 
-        the name to prove concept.
+        This will update the name of the party.
         """
         the_party = Party.get_party(id)
         if the_party:
