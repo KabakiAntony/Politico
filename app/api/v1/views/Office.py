@@ -3,6 +3,7 @@
 
 from flask import request
 from app.api.v1 import version_one
+from app.api.v1.utils import get_specific_objects
 from app.api.v1.models.Office import OFFICE,Office
 from app.api.utils import override_make_response,check_return
 
@@ -19,18 +20,14 @@ def create_office():
         name = office_data["name"]        
         office_type = office_data["office_type"]
     except:
-        return override_make_response(
-            "Error","Keys should be 'name' and 'office_type' ! ",
-            400)
+        return override_make_response("Error","Keys should be 'name' and 'office_type' ! ",400)
     new_office = {
         "name":name,
         "office_type":office_type,
         "id":len(OFFICE)
     }
     Office.new_office(new_office)
-    return override_make_response(
-        "Data",new_office,
-        201)
+    return override_make_response("Data",new_office,201)
 
 
 @version_one.route('/offices',methods=['GET'])
@@ -47,7 +44,7 @@ def get_office(id):
     This gets a specific office whose id matches with the one 
     supplied by the user
     """
-    office = Office.get_office(id)
+    office = get_specific_objects(Office,id)
     return check_return(office,"Office")
 
 
@@ -69,8 +66,6 @@ def update_office(id):
         office_data = request.get_json()  
         name = office_data["name"]
     except:
-        return override_make_response(
-            "Error","Key should be 'name'!",
-            400)
+        return override_make_response("Error","Key should be 'name'!",400)
     office = Office.modify_office(id,name)
     return check_return(office,"Office")
