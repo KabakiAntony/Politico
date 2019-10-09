@@ -32,7 +32,7 @@ def create_party():
 @version_one.route('/parties', methods=['GET'])
 def all_parties():
     """
-    This returns the party list empty or not.
+    Showing all parties in our list
     """
     # existing_parties is a list of the parties found/not
     existing_parties = Party.get_parties()

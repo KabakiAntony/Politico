@@ -41,8 +41,7 @@ class Party:
         Here we remove a party from our list.
         """
         the_party = Party.get_party(id)
-        if the_party:
-            for party in PARTY:
+        for party in PARTY:
                 if party["id"]==id:
                     PARTY.remove(party)
                     # the dynamic nature of python allows me to return a string at this point
@@ -56,11 +55,10 @@ class Party:
         This will update the name of the party.
         """
         the_party = Party.get_party(id)
-        if the_party:
-            for party in PARTY:
+        for party in PARTY:
                 if party["id"]==id:
                     party["name"]=name
-                    the_party = Party.get_party(id)
+                    the_party = Party.get_party(id)            
         return the_party
 
         
