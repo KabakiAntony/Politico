@@ -16,3 +16,4 @@ script:
   - python -m pytest --cov=app/api
 after_success:
   - coveralls
+  - codecov
