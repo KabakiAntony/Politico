@@ -1,5 +1,4 @@
 # this is the office model
-from app.api.v1.utils import get_specific_objects
 OFFICE = []
 
 class Office:
@@ -40,7 +39,7 @@ class Office:
         """
         This method deletes an office.
         """
-        the_office = get_specific_objects(Office,id)
+        the_office = Office.get_office(id)
         for office in OFFICE:
                 if office["id"]==id:
                     OFFICE.remove(office)
@@ -50,11 +49,11 @@ class Office:
     
     def modify_office(id,name):
         """Changes the name of the office"""
-        the_office = get_specific_objects(Office,id)
+        the_office = Office.get_office(id)
         for office in OFFICE:
             if office["id"]==id:
                 office["name"]=name
-                the_office = get_specific_objects(Office,id)
+                the_office = Office.get_office(id)
         return the_office
         
 
