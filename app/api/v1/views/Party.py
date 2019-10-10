@@ -1,6 +1,5 @@
 from flask import request
 from app.api.v1 import version_one
-from app.api.v1.utils import get_specific_objects
 from app.api.v1.models.Party import Party, PARTY
 from app.api.utils import override_make_response,check_return
 
@@ -44,7 +43,7 @@ def get_party(id):
     """
     Getting a party with a matching Id.
     """
-    party = get_specific_objects(Party,id)
+    party = Party.get_party(id)
     return check_return(party,"Party")
 
 

@@ -1,5 +1,3 @@
-from app.api.v1.utils import get_specific_objects
-
 PARTY = []
 
 class Party:
@@ -42,7 +40,7 @@ class Party:
         """
         Here we remove a party from our list.
         """
-        the_party = get_specific_objects(Party,id)
+        the_party = Party.get_party(id)
         for party in PARTY:
                 if party["id"]==id:
                     PARTY.remove(party)
@@ -56,11 +54,11 @@ class Party:
         """
         This will update the name of the party.
         """
-        the_party = get_specific_objects(Party,id)
+        the_party = Party.get_party(id)
         for party in PARTY:
                 if party["id"]==id:
                     party["name"]=name
-                    the_party = get_specific_objects(Party,id)            
+                    the_party = Party.get_party(id)            
         return the_party
 
         

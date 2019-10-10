@@ -44,7 +44,7 @@ def get_office(id):
     This gets a specific office whose id matches with the one 
     supplied by the user
     """
-    office = get_specific_objects(Office,id)
+    office = Office.get_office(id)
     return check_return(office,"Office")
 
 
