@@ -1,12 +1,10 @@
 # it will be getting the response from the model and preparing 
 # them for view by the user of the system
-
 from flask import request
 from app.api.v1 import version_one
 from app.api.v1.models.Office import OFFICE,Office
 from app.api.utils import override_make_response,check_return
 
-specific_office = '/offices/<int:id>'
 
 
 @version_one.route('/offices',methods=['POST'])
@@ -34,26 +32,23 @@ def all_offices():
     """
     This returns the offices or an empty list.
     """
-    existing_offices = Office.get_offices()
-    return check_return(existing_offices,"Office")
+    return check_return(Office.get_offices(),"Office")
 
-@version_one.route(specific_office,methods=['GET'])
+@version_one.route('/offices/<int:id>',methods=['GET'])
 def get_office(id):
     """
     This gets a specific office whose id matches with the one 
     supplied by the user
-    """
-    office = Office.get_office(id)
-    return check_return(office,"Office")
+    """ 
+    return check_return(Office.get_office(id),"Office")
 
 
-@version_one.route(specific_office,methods=['DELETE'])
+@version_one.route('/offices/<int:id>',methods=['DELETE'])
 def remove_office(id):
     """
     deletes an office 
     """
-    is_deleted = Office.delete_office(id)
-    return check_return(is_deleted,"Office")
+    return check_return(Office.delete_office(id),"Office")
 
 
 @version_one.route('/offices/<int:id>/name',methods=['PATCH'])
@@ -66,5 +61,4 @@ def update_office(id):
         name = office_data["name"]
     except:
         return override_make_response("Error","Key should be 'name'!",400)
-    office = Office.modify_office(id,name)
-    return check_return(office,"Office")
+    return check_return(Office.modify_office(id,name),"Office")
