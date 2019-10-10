@@ -3,7 +3,6 @@
 
 from flask import request
 from app.api.v1 import version_one
-from app.api.v1.utils import get_specific_objects
 from app.api.v1.models.Office import OFFICE,Office
 from app.api.utils import override_make_response,check_return
 
