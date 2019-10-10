@@ -22,7 +22,7 @@ class Office:
         supplied in the dunder init
         """
         OFFICE.append(self)
-        return OFFICE
+        return OFFICE[-1]
     
 
     def get_offices():

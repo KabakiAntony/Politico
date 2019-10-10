@@ -21,7 +21,7 @@ class Party:
         This creates new party and returns the updated party list
         """
         PARTY.append(self)
-        return PARTY
+        return PARTY[-1]
     
     def get_parties():
         """Returns all parties in the our party list"""      
@@ -40,26 +40,27 @@ class Party:
         """
         Here we remove a party from our list.
         """
-        the_party = Party.get_party(id)
+        Party.get_party(id)
         for party in PARTY:
                 if party["id"]==id:
                     PARTY.remove(party)
                     # the dynamic nature of python allows me to return a string at this point
                     # normally the_party would be a list or an empty list
-                    the_party = "Party deleted successfully."
-        return the_party
+                    return "Party deleted successfully."      
+        return Party.get_party(id)
+        
     
 
     def update_party(id,name):
         """
         This will update the name of the party.
         """
-        the_party = Party.get_party(id)
+        Party.get_party(id)
         for party in PARTY:
                 if party["id"]==id:
                     party["name"]=name
-                    the_party = Party.get_party(id)            
-        return the_party
+        return Party.get_party(id)            
+       
 
         
 
