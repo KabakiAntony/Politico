@@ -1,6 +1,7 @@
 # this is the office model
 OFFICE = []
 
+
 class Office:
     """
     This class will hold all the data, data operations, attributes and 
@@ -39,21 +40,20 @@ class Office:
         """
         This method deletes an office.
         """
-        the_office = Office.get_office(id)
+        Office.get_office(id)
         for office in OFFICE:
                 if office["id"]==id:
                     OFFICE.remove(office)
-                    the_office = "Office deleted successfully."        
-        return the_office
+                    return "Office deleted successfully."        
+        return Office.get_office(id)
     
     
     def modify_office(id,name):
         """Changes the name of the office"""
-        the_office = Office.get_office(id)
+        Office.get_office(id)
         for office in OFFICE:
             if office["id"]==id:
                 office["name"]=name
-                the_office = Office.get_office(id)
-        return the_office
+        return Office.get_office(id)
         
 
