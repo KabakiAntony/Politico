@@ -44,7 +44,7 @@ def get_party(id):
     """
     Getting a party with a matching Id.
     """
-    party = get_specific_objects("Party",id)
+    party = get_specific_objects(Party,id)
     return check_return(party,"Party")
 
 
