@@ -6,14 +6,14 @@ class Party:
     parties.
     """
 
-    def __init__(self, name, logoUrl, hqAddress):
-        """
+    """def __init__(self, name, logoUrl, hqAddress):
+        
         Initializing the party and its attributes
-        """
-        self.id = len(parties)
+        
+        self.id = len(PARTY)
         self.name = name
         self.logoUrl = logoUrl
-        self.hqAddress = hqAddress
+        self.hqAddress = hqAddress"""
 
 
     def new_party(self):
