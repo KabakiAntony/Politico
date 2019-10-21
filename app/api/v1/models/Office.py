@@ -33,24 +33,22 @@ class Office:
     def get_office(id):
         """This will get a specific office from the Office List
         """ 
-        the_office = [office for office in OFFICE if office['id']==id]
-        return the_office
-    
-    def delete_office(id):
-        """
-        This method deletes an office.
-        """
         for office in OFFICE:
             if office["id"]==id:
-                OFFICE.remove(office)
-                return "Office deleted successfully."                       
-        return Office.get_office(id)    
+                return office
+    
+    def delete_office(id):
+        """This method deletes an office."""    
+        if Office.get_office(id):
+            OFFICE.remove(Office.get_office(id))
+            return "Office deleted successfully."
     
     def modify_office(id,new_office_name):
         """Changes the name of the office"""
-        for office in OFFICE:
-            if office["id"]==id:
-                office["name"]=new_office_name
+        office = Office.get_office(id)
+        if office:
+            office["name"]=new_office_name
         return Office.get_office(id)
+         
         
 

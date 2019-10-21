@@ -69,7 +69,7 @@ class TestOfficeViews(unittest.TestCase):
         response = self.client.get('api/v1/offices/{}'.format(0))
         self.assertEqual(response.status_code,200)
         result = json.loads(response.data.decode('utf-8'))
-        self.assertEqual(result["Data"], [self.specific_office])
+        self.assertEqual(result["Data"], self.specific_office)
         self.assertEqual(result["Status"],200)
 
     def test_getting_a_non_existent_office(self):
