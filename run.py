@@ -7,11 +7,7 @@ app = create_app()
 @app.route("/")
 def root():
     """Return a welcome message to the users of this app"""
-    return render_template("index.html")
+    return "<p>Hello and welcome to Politico</p>"
 
-@app.route("/voter")
-def voter():
-    """Return a welcome message to the users of this app"""
-    return render_template("voter-dash.html")
 if __name__ == "__main__":
     app.run(debug=True)

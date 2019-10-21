@@ -36,7 +36,7 @@ def all_parties():
     """
     return check_return(Party.get_parties(),"Party")
 
-@version_one.route('parties/<int:id>', methods=['GET'])
+@version_one.route('parties/<int:party_id>', methods=['GET'])
 def get_party(party_id):
     """
     Getting a party with a matching Id.
@@ -44,14 +44,14 @@ def get_party(party_id):
     return check_return(Party.get_party(party_id),"Party")
 
 
-@version_one.route('parties/<int:id>', methods=['DELETE'])
+@version_one.route('parties/<int:party_id>', methods=['DELETE'])
 def remove_party(party_id):
     """
     This deletes a party.
     """ 
     return check_return(Party.delete_party(party_id),"Party")
 
-@version_one.route('parties/<int:id>/name',methods=['PATCH'])
+@version_one.route('parties/<int:party_id>/name',methods=['PATCH'])
 def update_party(party_id):
     """
     This updates the name of the party.
