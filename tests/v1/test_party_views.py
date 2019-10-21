@@ -23,6 +23,12 @@ class TestPartyViews(unittest.TestCase):
         self.updated_party = {
             "name": "updated name"
             }
+        self.invalid_party_key = {
+            "name2":"invalid key"
+        }
+        self.invalid_party = {
+            "id1":"invalid party"
+        }
     
 
     def tearDown(self):
@@ -40,13 +46,19 @@ class TestPartyViews(unittest.TestCase):
         return response
     
 
-    def test_creating_party(self):
+    def test_creating_valid_party(self):
         """ Test the creation of a party """
         response = self.create()
         self.assertEqual(response.status_code,201)
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], self.specific_party)
         self.assertEqual(result["Status"], 201)
+    
+    def test_creating_invalid_party(self):
+        """this will test creating an invalid party"""
+        response = self.client.post(
+            'api/v1/parties',data=json.dumps(self.invalid_party), content_type='application/json')
+        self.assertEqual(response.status_code,400)
     
     def test_getting_all_parties(self):
         """Test getting all parties """
@@ -90,3 +102,10 @@ class TestPartyViews(unittest.TestCase):
         response = self.client.patch('api/v1/parties/{}/name'.format(0),
             data=json.dumps(self.updated_party),content_type='application/json')
         self.assertEqual(response.status_code,200)
+    
+    
+    def test_updating_using_invalid_key(self): 
+        """Test updating using an invalid key"""
+        response = self.client.patch('api/v1/parties/{}/name'.format(0),
+            data=json.dumps(self.invalid_party_key),content_type='application/json')
+        self.assertEqual(response.status_code,400)
