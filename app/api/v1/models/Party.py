@@ -27,39 +27,39 @@ class Party:
         """Returns all parties in the our party list"""      
         return PARTY
     
-    def get_party(id):
+    def get_party(party_id):
         """
         This will get a single party from the party list.
         """
         # this is a list comprehension to make code readable
-        the_party = [party for party in PARTY if party["id"] == id]
+        the_party = [party for party in PARTY if party["id"] == party_id]
         return the_party
     
 
-    def delete_party(id):
+    def delete_party(party_id):
         """
         Here we remove a party from our list.
         """
-        Party.get_party(id)
+        Party.get_party(party_id)
         for party in PARTY:
-                if party["id"]==id:
+                if party["id"]==party_id:
                     PARTY.remove(party)
                     # the dynamic nature of python allows me to return a string at this point
                     # normally the_party would be a list or an empty list
                     return "Party deleted successfully."      
-        return Party.get_party(id)
+        return Party.get_party(party_id)
         
     
 
-    def update_party(id,name):
+    def update_party(party_id,new_party_name):
         """
         This will update the name of the party.
         """
-        Party.get_party(id)
+        Party.get_party(party_id)
         for party in PARTY:
-                if party["id"]==id:
-                    party["name"]=name
-        return Party.get_party(id)            
+                if party["id"]==party_id:
+                    party["name"]=new_party_name
+        return Party.get_party(party_id)            
        
 
         

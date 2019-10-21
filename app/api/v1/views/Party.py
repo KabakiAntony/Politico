@@ -34,37 +34,32 @@ def all_parties():
     """
     Showing all parties in our list
     """
-    # existing_parties is a list of the parties found/not
-    existing_parties = Party.get_parties()
-    return check_return(existing_parties,"Party")
+    return check_return(Party.get_parties(),"Party")
 
 @version_one.route('parties/<int:id>', methods=['GET'])
-def get_party(id):
+def get_party(party_id):
     """
     Getting a party with a matching Id.
     """
-    party = Party.get_party(id)
-    return check_return(party,"Party")
+    return check_return(Party.get_party(party_id),"Party")
 
 
 @version_one.route('parties/<int:id>', methods=['DELETE'])
-def remove_party(id):
+def remove_party(party_id):
     """
     This deletes a party.
-    """
-    is_deleted = Party.delete_party(id)
-    return check_return(is_deleted,"Party")
+    """ 
+    return check_return(Party.delete_party(party_id),"Party")
 
 @version_one.route('parties/<int:id>/name',methods=['PATCH'])
-def update_party(id):
+def update_party(party_id):
     """
     This updates the name of the party.
     """
     try:
         party_data = request.get_json()  
         name = party_data["name"]
-        party = Party.update_party(id,name)
     except:
         return override_make_response("Error","Key should be name !",400)
-    return check_return(party,"Party")
+    return check_return(Party.update_party(party_id,name),"Party")
 

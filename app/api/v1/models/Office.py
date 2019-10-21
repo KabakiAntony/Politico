@@ -48,12 +48,12 @@ class Office:
         return Office.get_office(id)
     
     
-    def modify_office(id,name):
+    def modify_office(id,new_office_name):
         """Changes the name of the office"""
         Office.get_office(id)
         for office in OFFICE:
             if office["id"]==id:
-                office["name"]=name
+                office["name"]=new_office_name
         return Office.get_office(id)
         
 

@@ -1,0 +1,116 @@
+<!Doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a one stop shop for voting and following your leader">
+    <meta name="Keywords" content=" Vote, Politico, results">
+    <meta name="author" content="kabaki.kiarie@gmail.com">
+    <meta name="viewport" content="Width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/politico.css">
+    <link rel="stylesheet" type="text/css" href="css/voter-dash.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/politico.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/voter-dash.css') }}">
+     
+     <link rel="icon" href="" type="image/x-icon">
+    <title>Politico : User Profile</title>
+</head>
+
+<body>
+    <div class="header">
+        <a class="logo">Politico</a>
+        <div class="header-right">
+            <a  href="index.html">About</a>
+            <a class="active" href="templates/voter-dash.html">Voter Dashboard</a>
+            <a href="/">Sign out</a>
+        </div>
+    </div>
+    <div class="container">
+    <div class="voter-card">
+            <h2>Voter welcome to your dashboard, Vote for the one you wish below</h2>
+            <div class="voter-dash-text">
+                <p>Hello this the user dashboard profile , Kindly go through the various people who have registered
+                to run vor the various offices.....The following things are to note however that you only vote for action
+                for one person once for the various government offices we have created.
+                </P>
+                </div>
+        <div class="voter-table">
+         <table id="voter-table">
+            <tr>
+                <th>Office</th>
+                <th>Politician Name</th>
+                <th>Party</th>            
+                <th>Symbol</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                    <td>Labor party</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td><form>
+                       <a class="vote-btn" href="#">Vote</a>
+                        </form>
+                    </td></td>
+                </tr>
+                <tr>
+                    <td>Democrats</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td><form>
+                       <a class="vote-btn" href="#">Vote</a>
+                        </form>
+                    </td></td>
+                </tr>
+                <tr>
+                    <td>Republicans</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td><form>
+                       <a class="vote-btn" href="#">Vote</a>
+                        </form>
+                    </td></td>
+                </tr>
+                <tr>
+                    <td>Jubilee</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td><form>
+                       <a class="vote-btn" href="#">Vote</a>
+                        </form>
+                    </td></td>
+                </tr>
+                <tr>
+                    <td>Liberal Party</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td>
+                    <form>
+                       <a class="vote-btn" href="#">Vote</a>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Democrats</td>
+                    <td>Fist</td>
+                    <td>Jubilee house</td>
+                    <td>Red</td>
+                    <td>
+                    <form>
+                       <a class="vote-btn"  href="#">Vote</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &#169; Politico 2019</p>
+    </div>
+</body>
+
+</html>
