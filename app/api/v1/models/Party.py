@@ -40,7 +40,6 @@ class Party:
         """
         Here we remove a party from our list.
         """
-        Party.get_party(party_id)
         for party in PARTY:
                 if party["id"]==party_id:
                     PARTY.remove(party)
@@ -55,10 +54,9 @@ class Party:
         """
         This will update the name of the party.
         """
-        Party.get_party(party_id)
         for party in PARTY:
-                if party["id"]==party_id:
-                    party["name"]=new_party_name
+            if party["id"]==party_id:
+                party["name"]=new_party_name
         return Party.get_party(party_id)            
        
 

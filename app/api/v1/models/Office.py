@@ -40,17 +40,14 @@ class Office:
         """
         This method deletes an office.
         """
-        Office.get_office(id)
         for office in OFFICE:
-                if office["id"]==id:
-                    OFFICE.remove(office)
-                    return "Office deleted successfully."        
-        return Office.get_office(id)
-    
+            if office["id"]==id:
+                OFFICE.remove(office)
+                return "Office deleted successfully."                       
+        return Office.get_office(id)    
     
     def modify_office(id,new_office_name):
         """Changes the name of the office"""
-        Office.get_office(id)
         for office in OFFICE:
             if office["id"]==id:
                 office["name"]=new_office_name
