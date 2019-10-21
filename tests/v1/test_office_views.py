@@ -25,6 +25,9 @@ class TestOfficeViews(unittest.TestCase):
         self.updated_office = {
             "name":"new office"
         }
+        self.invalid_office_key = {
+            "name2":"invalid key"
+        }
     
 
     def tearDown(self):
@@ -41,13 +44,19 @@ class TestOfficeViews(unittest.TestCase):
         return response
 
 
-    def test_creating_office(self):
+    def test_creating_validated_office(self):
         """Test creation of an office """
         response = self.post()
         self.assertEqual(response.status_code,201)
         result = json.loads(response.data.decode('utf-8'))
         self.assertEqual(result["Data"], self.specific_office)
         self.assertEqual(result["Status"], 201)
+    
+    def test_creating_invalid_office(self):
+        response = self.client.post(
+            'api/v1/offices',data=json.dumps(self.invalid_office), content_type='application/json')
+        self.assertEqual(response.status_code,400)
+
 
     # the reason am posting in test_getting_all_offices is
     # because tests are run alphabetically in
@@ -105,3 +114,11 @@ class TestOfficeViews(unittest.TestCase):
         response = self.client.patch('api/v1/offices/{}/name'.format(100),
             data=json.dumps(self.updated_office),content_type='application/json')
         self.assertEqual(response.status_code,404)
+    
+
+    def test_updating_using_invalid_key(self): 
+        """Test updating using an invalid key"""
+        response = self.client.patch('api/v1/offices/{}/name'.format(0),
+            data=json.dumps(self.invalid_office_key),content_type='application/json')
+        self.assertEqual(response.status_code,400)
+
