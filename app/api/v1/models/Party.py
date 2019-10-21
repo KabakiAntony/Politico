@@ -6,16 +6,6 @@ class Party:
     parties.
     """
 
-    """def __init__(self, name, logoUrl, hqAddress):
-        
-        Initializing the party and its attributes
-        
-        self.id = len(PARTY)
-        self.name = name
-        self.logoUrl = logoUrl
-        self.hqAddress = hqAddress"""
-
-
     def new_party(self):
         """
         This creates new party and returns the updated party list
@@ -31,32 +21,27 @@ class Party:
         """
         This will get a single party from the party list.
         """
-        # this is a list comprehension to make code readable
-        the_party = [party for party in PARTY if party["id"] == party_id]
-        return the_party
+        for party in PARTY:
+            if party["id"] == party_id:
+                return party
     
 
     def delete_party(party_id):
         """
         Here we remove a party from our list.
         """
-        for party in PARTY:
-                if party["id"]==party_id:
-                    PARTY.remove(party)
-                    # the dynamic nature of python allows me to return a string at this point
-                    # normally the_party would be a list or an empty list
-                    return "Party deleted successfully."      
-        return Party.get_party(party_id)
-        
+        if Party.get_party(party_id):
+            PARTY.remove(Party.get_party(party_id))
+            return "Party deleted successfully."    
     
 
     def update_party(party_id,new_party_name):
         """
         This will update the name of the party.
         """
-        for party in PARTY:
-            if party["id"]==party_id:
-                party["name"]=new_party_name
+        party = Party.get_party(id)
+        if party:
+            party["name"]= new_party_name
         return Party.get_party(party_id)            
        
 

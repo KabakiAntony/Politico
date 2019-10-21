@@ -6,14 +6,6 @@ class Office:
     """
     This class will hold all the data, data operations, attributes and 
     the methods of this class that will be dealing with the data of the class
-    
-    def __init__(self,name,office_type):
-    
-        This initializes the attribs of the office that is the
-        name, type and id
-        self.name = name 
-        self.office_type = office_type 
-        self.id = len(OFFICE)
     """
 
     def new_office(self):
