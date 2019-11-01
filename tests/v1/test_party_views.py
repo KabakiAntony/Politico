@@ -82,7 +82,7 @@ class TestPartyViews(unittest.TestCase):
     def test_getting_a_non_existent_party(self):
         """Test getting a non existent party"""
         response = self.client.get(
-            'api/v1/offices/{}'.format(10),content_type='application/json')
+            'api/v1/parties/{}'.format(10000),content_type='application/json')
         self.assertEqual(response.status_code,404)
 
     def test_deleting_party(self):

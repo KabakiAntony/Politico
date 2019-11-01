@@ -38,10 +38,8 @@ def all_offices():
 def get_office(id):
     """
     This gets a specific office whose id matches with the one 
-    supplied by the user
-    """ 
+    supplied by the user"""      
     return check_return(Office.get_office(id),"Office")
-
 
 @version_one.route('/offices/<int:id>',methods=['DELETE'])
 def remove_office(id):
