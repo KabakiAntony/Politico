@@ -18,19 +18,6 @@ class Party:
         """Returns all parties in the our party list"""      
         return PARTY
     
-    def get_party(party_id):
-        """This will get a single party from the party list."""
-        return get_method("Party",party_id)
-    
-
-    def delete_party(party_id):
-        """Remove a party from our list."""
-        return delete_method("Party",party_id)
-
-    def update_party(party_id,new_party_name):
-        """This will update the name of the party.""" 
-        return update_method("Party",party_id,new_party_name)           
-       
 
         
 

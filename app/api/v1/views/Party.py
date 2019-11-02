@@ -2,6 +2,8 @@ from flask import request
 from app.api.v1 import version_one
 from app.api.v1.models.Party import Party, PARTY
 from app.api.utils import override_make_response,check_return
+from app.api.v1.v1_models_utils import get_method,delete_method,update_method
+#from app.api.v1.models.Lists import PARTY
 
 
 @version_one.route('/parties', methods=['POST'])
@@ -40,9 +42,9 @@ def all_parties():
 def get_or_delete(party_id):
     """This view combines delete and get since they have similar routes"""
     if request.method == 'GET':
-        return check_return(Party.get_party(party_id),"Party")
+        return check_return(get_method("Party",party_id),"Party")
     else:
-        return check_return(Party.delete_party(party_id),"Party")
+        return check_return(delete_method("Party",party_id),"Party")
 
 @version_one.route('parties/<int:party_id>/name',methods=['PATCH'])
 def update_party(party_id):
@@ -54,5 +56,5 @@ def update_party(party_id):
         name = party_data["name"]
     except:
         return override_make_response("Error","Key should be name !",400)
-    return check_return(Party.update_party(party_id,name),"Party")
+    return check_return(update_method("Party",party_id,name),"Party")
 

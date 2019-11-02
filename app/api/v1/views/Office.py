@@ -4,6 +4,7 @@ from flask import request
 from app.api.v1 import version_one
 from app.api.v1.models.Office import OFFICE,Office
 from app.api.utils import override_make_response,check_return
+from app.api.v1.v1_models_utils import get_method,delete_method,update_method
 
 
 
@@ -39,9 +40,9 @@ def delete_or_get(office_id):
     """This gets or deletes an office since they have similar
     endpoints"""
     if request.method == 'GET':
-        return check_return(Office.get_office(office_id),"Office")
+        return check_return(get_method("Office",office_id),"Office")
     else:
-        return check_return(Office.delete_office(office_id),"Office")
+        return check_return(delete_method("Office",office_id),"Office")
 
 
 @version_one.route('/offices/<int:id>/name',methods=['PATCH'])
@@ -54,4 +55,4 @@ def update_office(id):
         name = office_data["name"]
     except:
         return override_make_response("Error","Key should be 'name'!",400)
-    return check_return(Office.modify_office(id,name),"Office")
+    return check_return(update_method("Office",id,name),"Office")

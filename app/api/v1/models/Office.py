@@ -20,20 +20,7 @@ class Office:
     def get_offices():
         """This will return all the offices in the given list 
         Or an empty list if no offices exist"""
-        return OFFICE
-
-    def get_office(id):
-        """This will get a specific office from the Office List"""
-        return get_method("Office",id)
-        
-    
-    def delete_office(id):
-        """This method deletes an office"""
-        return delete_method("Office",id)
-    
-    def modify_office(id,new_office_name):
-        """Changes the name of the office"""
-        return update_method("Office",id,new_office_name)
+        return OFFICE    
         
 
          
