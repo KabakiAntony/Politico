@@ -53,6 +53,7 @@ class TestOfficeViews(unittest.TestCase):
         self.assertEqual(result["Status"], 201)
     
     def test_creating_invalid_office(self):
+        """Test creating an invalid office"""
         response = self.client.post(
             'api/v1/offices',data=json.dumps(self.invalid_office), content_type='application/json')
         self.assertEqual(response.status_code,400)
