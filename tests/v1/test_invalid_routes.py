@@ -1,7 +1,6 @@
 import json 
 import unittest
 from app import create_app
-from app.api.v1.models import Party
 
 class TestInvalidRoutes(unittest.TestCase):
     def setUp(self):

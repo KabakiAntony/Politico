@@ -1,7 +1,7 @@
 import json 
 import unittest
 from app import create_app
-from app.api.v1.models.Party import Party,PARTY
+from app.api.v1.models.v1_models_utils import PARTY
 
 
 class TestPartyViews(unittest.TestCase):

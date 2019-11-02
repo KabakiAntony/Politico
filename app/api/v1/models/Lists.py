@@ -1,2 +1,0 @@
-OFFICE = []
-PARTY = []

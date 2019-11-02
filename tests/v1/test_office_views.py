@@ -2,7 +2,7 @@
 import unittest
 import json
 from app import create_app
-from app.api.v1.models.Office import OFFICE
+from app.api.v1.models.v1_models_utils import OFFICE
 
 class TestOfficeViews(unittest.TestCase):
 
