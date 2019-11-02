@@ -1,3 +1,11 @@
+"""
+The idea was to have an office and a party model
+and it works just fine but then why have two files 
+that perform the same operations this highly affects the 
+maintainability of the code so I merged the operations 
+and came up with a single file that acts on both sets of lists
+# the  model argument stands for either office/party
+"""
 OFFICE = []
 PARTY = []
 
@@ -19,15 +27,8 @@ def new_object_item(model,self):
     party or an office
     """
     list_model = get_model(model)
-    if model == "Office":
-        OFFICE.append(self)
-        return OFFICE[-1]
-    else:
-        PARTY.append(self)
-        return PARTY[-1] 
-
-
-
+    list_model.append(self)
+    return list_model[-1] 
 
 
 def get_specific_object_method(model,id):
