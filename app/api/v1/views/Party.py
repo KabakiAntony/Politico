@@ -36,20 +36,13 @@ def all_parties():
     """
     return check_return(Party.get_parties(),"Party")
 
-@version_one.route('parties/<int:party_id>', methods=['GET'])
-def get_party(party_id):
-    """
-    Getting a party with a matching Id.
-    """
-    return check_return(Party.get_party(party_id),"Party")
-
-
-@version_one.route('parties/<int:party_id>', methods=['DELETE'])
-def remove_party(party_id):
-    """
-    This deletes a party.
-    """ 
-    return check_return(Party.delete_party(party_id),"Party")
+@version_one.route('parties/<int:party_id>', methods=['GET','DELETE'])
+def get_or_delete(party_id):
+    """This view combines delete and get since they have similar routes"""
+    if request.method == 'GET':
+        return check_return(Party.get_party(party_id),"Party")
+    else:
+        return check_return(Party.delete_party(party_id),"Party")
 
 @version_one.route('parties/<int:party_id>/name',methods=['PATCH'])
 def update_party(party_id):

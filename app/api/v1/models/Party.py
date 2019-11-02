@@ -1,4 +1,4 @@
-from app.api.v1.v1_utils import get_method,delete_method,update_method
+from app.api.v1.v1_models_utils import get_method,delete_method,update_method
 from app.api.v1.models.Lists import PARTY
 
 class Party:

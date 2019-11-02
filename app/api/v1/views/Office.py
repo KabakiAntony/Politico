@@ -34,19 +34,14 @@ def all_offices():
     """
     return check_return(Office.get_offices(),"Office")
 
-@version_one.route('/offices/<int:id>',methods=['GET'])
-def get_office(id):
-    """
-    This gets a specific office whose id matches with the one 
-    supplied by the user"""      
-    return check_return(Office.get_office(id),"Office")
-
-@version_one.route('/offices/<int:id>',methods=['DELETE'])
-def remove_office(id):
-    """
-    deletes an office 
-    """
-    return check_return(Office.delete_office(id),"Office")
+@version_one.route('/offices/<int:office_id>',methods=['GET','DELETE'])
+def delete_or_get(office_id):
+    """This gets or deletes an office since they have similar
+    endpoints"""
+    if request.method == 'GET':
+        return check_return(Office.get_office(office_id),"Office")
+    else:
+        return check_return(Office.delete_office(office_id),"Office")
 
 
 @version_one.route('/offices/<int:id>/name',methods=['PATCH'])

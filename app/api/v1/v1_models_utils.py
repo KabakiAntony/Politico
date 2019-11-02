@@ -10,7 +10,7 @@ def get_model(model):
 
 
 def get_method(model,id):
-    """This is a utility method for getting"""
+    """This is for getting parties/offices"""
     list_model = get_model(model)
     for list_object in list_model:
         if list_object["id"] == id:
@@ -18,7 +18,7 @@ def get_method(model,id):
 
 
 def delete_method(model,id):
-    """This is a utility method for deleting"""
+    """This is for deleting parties/offices"""
     if get_method(model,id):
         list_model = get_model(model)
         list_model.remove(get_method(model,id))
@@ -26,7 +26,7 @@ def delete_method(model,id):
 
 
 def update_method(model,id,update_name):
-    """This is a utility method for updating"""
+    """This is for updating"""
     list_object = get_method(model,id)
     if list_object:
         list_object["name"]=update_name
