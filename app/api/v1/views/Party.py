@@ -28,14 +28,14 @@ def create_party():
     new_object_item("Party",new_party)
     return override_make_response("Data",new_party,201)
 
-
+""""
 @version_one.route('/parties', methods=['GET'])
 def all_parties():
-    """
+    
     Showing all parties in our list
-    """
+    
     return check_return(get_model("Party"),"Party")
-
+"""
 @version_one.route('parties/<int:party_id>', methods=['GET','DELETE'])
 def get_or_delete(party_id):
     """This view combines delete and get since they have similar routes"""

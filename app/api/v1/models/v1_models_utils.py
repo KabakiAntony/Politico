@@ -16,8 +16,10 @@ def get_model(model):
     """
     if model == "Office":
         list_model = OFFICE
-    else:
+    elif model== "Party":
         list_model = PARTY
+    else:
+        list_model = "Model not found"
     return list_model
 
 

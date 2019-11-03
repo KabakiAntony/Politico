@@ -55,7 +55,7 @@ class TestPartyViews(unittest.TestCase):
         self.assertEqual(result["Status"], 201)
     
     def test_creating_invalid_party(self):
-        """this will test creating an invalid party"""
+        """Test creating an invalid party"""
         response = self.client.post(
             'api/v1/parties',data=json.dumps(self.invalid_party), content_type='application/json')
         self.assertEqual(response.status_code,400)

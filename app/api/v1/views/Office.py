@@ -26,13 +26,13 @@ def create_office():
     new_object_item("Office",new_office)
     return override_make_response("Data",new_office,201)
 
-
+"""
 @version_one.route('/offices',methods=['GET'])
 def all_offices():
-    """
+    
     This returns the offices or an empty list.
-    """
-    return check_return(get_model("Office"),"Office")
+    
+    return check_return(get_model("Office"),"Office")"""
 
 @version_one.route('/offices/<int:office_id>',methods=['GET','DELETE'])
 def delete_or_get(office_id):
