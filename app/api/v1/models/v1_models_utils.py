@@ -14,12 +14,11 @@ def get_model(model):
     know which model called a method while at this method will also be 
     used to return all items in the list that is parties/offices
     """
+    list_model = ""
     if model == "Office":
         list_model = OFFICE
     elif model== "Party":
         list_model = PARTY
-    else:
-        list_model = "Model not found"
     return list_model
 
 

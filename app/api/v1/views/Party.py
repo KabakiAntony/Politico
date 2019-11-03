@@ -28,14 +28,6 @@ def create_party():
     new_object_item("Party",new_party)
     return override_make_response("Data",new_party,201)
 
-""""
-@version_one.route('/parties', methods=['GET'])
-def all_parties():
-    
-    Showing all parties in our list
-    
-    return check_return(get_model("Party"),"Party")
-"""
 @version_one.route('parties/<int:party_id>', methods=['GET','DELETE'])
 def get_or_delete(party_id):
     """This view combines delete and get since they have similar routes"""
@@ -43,16 +35,3 @@ def get_or_delete(party_id):
         return check_return(get_specific_object_method("Party",party_id),"Party")
     else:
         return check_return(delete_method("Party",party_id),"Party")
-
-@version_one.route('parties/<int:party_id>/name',methods=['PATCH'])
-def update_party(party_id):
-    """
-    This updates the name of the party.
-    """
-    try:
-        party_data = request.get_json()  
-        name = party_data["name"]
-    except:
-        return override_make_response("Error","Key should be name !",400)
-    return check_return(update_method("Party",party_id,name),"Party")
-
