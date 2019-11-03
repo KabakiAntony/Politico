@@ -49,5 +49,25 @@ def update_office_or_party(id):
         return override_make_response("Error","Key should be 'name'!",400)
     return check_return(update_method(f"{r_model}",id,name),f"{r_model}")
 
+
+
+@version_one.route('/parties/<int:id>', methods=['GET','DELETE'])
+@version_one.route('/offices/<int:id>', methods=['GET','DELETE'])
+def get_or_delete_parties_offices(id):
+    """
+    This gets or deletes parties or offices"""
+    r_path = request.path.split('/')[-2]
+    r_model =""
+    if r_path == "offices":
+        r_model = "Office"
+    elif r_path == "parties":
+        r_model = "Party"
+    if request.method == 'GET':
+        return check_return(get_specific_object_method(f"{r_model}",id),f"{r_model}")
+    else:
+        return check_return(delete_method(f"{r_model}",id),f"{r_model}")
+
+
+
     
 

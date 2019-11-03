@@ -7,12 +7,11 @@ from app.api.v1.models.v1_models_utils import get_specific_object_method,\
     delete_method,update_method,get_model,new_object_item,OFFICE
 
 
-
 @version_one.route('/offices',methods=['POST'])
 def create_office():
-    """This creates a new office given that the
-    name and the type are supplied by the user the id will be 
-    auto generated""" 
+    """
+    This creates an  new office
+    """
     try:
         office_data = request.get_json()  
         name = office_data["name"]        
@@ -26,12 +25,3 @@ def create_office():
     }
     new_object_item("Office",new_office)
     return override_make_response("Data",new_office,201)
-
-@version_one.route('/offices/<int:office_id>',methods=['GET','DELETE'])
-def delete_or_get(office_id):
-    """This gets or deletes an office since they have similar
-    endpoints"""
-    if request.method == 'GET':
-        return check_return(get_specific_object_method("Office",office_id),"Office")
-    else:
-        return check_return(delete_method("Office",office_id),"Office")

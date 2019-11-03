@@ -7,9 +7,7 @@ from app.api.v1.models.v1_models_utils import get_specific_object_method,delete_
 @version_one.route('/parties', methods=['POST'])
 def create_party():
     """
-    This  creates a new party with the parameters of
-    name, logourl, hqaddress and an auto generated id
-    and returns it as a part of the response to the user
+    Creates a new party
     """
     try:
         party_data = request.get_json()  
@@ -27,11 +25,3 @@ def create_party():
     }
     new_object_item("Party",new_party)
     return override_make_response("Data",new_party,201)
-
-@version_one.route('parties/<int:party_id>', methods=['GET','DELETE'])
-def get_or_delete(party_id):
-    """This view combines delete and get since they have similar routes"""
-    if request.method == 'GET':
-        return check_return(get_specific_object_method("Party",party_id),"Party")
-    else:
-        return check_return(delete_method("Party",party_id),"Party")
