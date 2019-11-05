@@ -10,9 +10,10 @@ OFFICE = []
 PARTY = []
 
 def get_model(model):
-    """On the initial creation of this method it was meant to help 
-    know which model called a method while at this method will also be 
-    used to return all items in the list that is parties/offices
+    """
+    This method helps to know if its a party or an office action 
+    that is calling a certain method and then passes it the 
+    corresponding list to act on.
     """
     list_model = ""
     if model == "Office":
