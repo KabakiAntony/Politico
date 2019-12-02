@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/KabakiAntony/Politico.svg?branch=develop)](https://travis-ci.org/KabakiAntony/Politico)
-[![Maintainability](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/maintainability)](https://codeclimate.com/github/KabakiAntony/Politico/test_coverage) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/Politico/badge.svg)](https://coveralls.io/github/KabakiAntony/Politico)  [![codecov](https://codecov.io/gh/KabakiAntony/Politico/branch/develop/graph/badge.svg)](https://codecov.io/gh/KabakiAntony/Politico) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/88cda9fd1e4241758ce98192d6bd297d)](https://www.codacy.com/manual/KabakiAntony/Politico?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=KabakiAntony/Politico&amp;utm_campaign=Badge_Grade) [![BCH compliance](https://bettercodehub.com/edge/badge/KabakiAntony/Politico?branch=develop)](https://bettercodehub.com/) [![codebeat badge](https://codebeat.co/badges/a750a25e-ccdc-46cf-9adc-fe78aa20f76c)](https://codebeat.co/projects/github-com-kabakiantony-politico-develop) [![Build status](https://ci.appveyor.com/api/projects/status/a4pywqgxl5lypkle/branch/develop?svg=true)](https://ci.appveyor.com/project/KabakiAntony/politico/branch/develop) [![CircleCI](https://circleci.com/gh/KabakiAntony/Politico.svg?style=svg)](https://circleci.com/gh/KabakiAntony/Politico)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/2520ce3bfae6e8e38329/maintainability)](https://codeclimate.com/github/KabakiAntony/Politico/test_coverage) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/Politico/badge.svg)](https://coveralls.io/github/KabakiAntony/Politico) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/88cda9fd1e4241758ce98192d6bd297d)](https://www.codacy.com/manual/KabakiAntony/Politico?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=KabakiAntony/Politico&amp;utm_campaign=Badge_Grade) 
 
 
 # Politico
@@ -13,7 +12,10 @@
  it uses a list data structure to store data and hence the data is overwritten everytime the app
  is reloaded and v2 uses the postgres database to store information hence what we will connect with 
  the UI.
-
+ 
+ There are additional badges for this repository already made but I will not add them but you can 
+ check them out in the text file in the root of the project labelled badges.
+ 
  [Find the UI here](https://kabakiantony.github.io/Politico/UI/)
 
  [Find the app on heroku](https://kapolitico.herokuapp.com/)
