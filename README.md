@@ -13,8 +13,9 @@
  is reloaded and v2 uses the postgres database to store information hence what we will connect with 
  the UI.
  
- There are additional badges for this repository already made but I will not add them but you can 
- check them out in the text file in the root of the project labelled badges.
+ ***There are additional badges for this repository already made but I will not add them but you can 
+ check them out in the text file in the root of the project labelled badges.They are already linked to
+ the project and running in the background just removed them to remove clutter from the readme file.
  
  [Find the UI here](https://kabakiantony.github.io/Politico/UI/)
 
